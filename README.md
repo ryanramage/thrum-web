@@ -7,6 +7,12 @@ Click `Show` in the header to see your app live. Updates to your code will insta
 
 Find out more [about Glitch](https://glitch.com/about).
 
+Need more power?  
+[Boost your Glitch apps for improved performance!](https://glitch.com/boost)  
+------------
+***
+
+
 
 Your Project
 ------------
