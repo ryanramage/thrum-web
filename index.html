@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Hi there!</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>  
-  <body>
-    <h1>Hi there!</h1>
-    
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
+<!doctype html>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Thrum Live Coding</title>
+  <meta name="description" content="A thrum powered midi music making page">
+  <meta name="author" content="Ryan Ramage">
+  <style type="text/css" media="screen">
+    #editor {
+      width: 780px;
+      height: 500px;
+      z-index: 0;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h2>Thrum</h2>
+  Midi Clock Source <select id=select_midi_in></select>
+  Midi Notes Out <select id=select_midi_out></select>
+
+  <h3>Thrum Tick js file</h3>
+  <input id="tickFile" type="text" value="./music.js">
+  <button id="load" type="button" name="load">load</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/jzz"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jzz-gui-select"></script>
+  <script src="https://cdn.jsdelivr.net/npm/immutable@4.0.0/dist/immutable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ramda@0.25.0/dist/ramda.min.js"></script>
+  <script src="https://pagecdn.io/lib/ace/1.4.12/ace.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://pagecdn.io/lib/ace/1.4.12/theme-monokai.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://pagecdn.io/lib/ace/1.4.12/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://pagecdn.io/lib/ace/1.4.12/worker-javascript.js" type="text/javascript" charset="utf-8"></script>
+  <script type="module" src="index.js"></script>
+</body>
 </html>
+
