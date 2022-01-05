@@ -3,6 +3,8 @@ import { lengths } from './modules/lengths.js'
 let tick = () => {}
 let lastModified = null
 
+ M.AutoInit();
+
 const midi_in = JZZ.gui.SelectMidiIn({ at: 'select_midi_in' })
 const midi_out = JZZ.gui.SelectMidiOut({ at: 'select_midi_out' })
 

@@ -28,12 +28,32 @@
         <h5 class="header col s12 light">A javascript livecoding music environment</h5>
       </div>
       <div class="row center">
-        Midi Clock Source <select id="select_midi_in"></select>
-        Midi Notes Out <select id="select_midi_out"></select>
-
+        
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <label>Materialize Select</label>
+        </div>
+        
+        <div class="input-field col s12">
+          <select id="select_midi_in"></select>
+          <label>Midi Clock Source</label>
+        </div>        
+        <div class="input-field col s12">
+          <select id="select_midi_out"></select>
+          <label>Midi Notes Out</label>
+        </div>   
+        
         <h3>Thrum Tick js file</h3>
         <input id="tickFile" type="text" value="https://lilac-wooden-croissant.glitch.me/music.js">
-        <button id="load" type="button" name="load" class="btn waves-effect waves-light">load</button>
+        
+        <button id="load" type="button" name="load" class="btn waves-effect waves-light">
+          Load<i class="material-icons right">send</i>
+        </button>
 
         <div id="error"></div>
       </div>
@@ -41,6 +61,7 @@
 
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jzz"></script>
   <script src="https://cdn.jsdelivr.net/npm/jzz-gui-select"></script>
