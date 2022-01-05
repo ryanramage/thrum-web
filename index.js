@@ -22,6 +22,10 @@ if (!window.location.search) {
       .catch(err => document.getElementById('error').innerHTML = err.toString() )
   })
 } else {
+
+  document.getElementById('tickFile').setAttribute("readonly", true)
+  document.getElementById('load').style.display = 'none'
+  
   const tickFile = decodeURIComponent(window.location.search.substring(1))
   import(tickFile).then(module => tick = module.tick)
   // start hot reload
