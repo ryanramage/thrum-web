@@ -3,6 +3,17 @@ import { lengths } from './modules/lengths.js'
 let tick = () => {}
 let lastModified = null
 
+if (!window.location.search) {
+  // user needs to set an entry point
+  document.getElementById('load').addEventListener('click', () => {
+    const tickFile = document.getElementById('tickFile').value
+    // just check that its valid before sending them off
+    import(tickFile)
+      .then(module => {})
+      .catch(err => { document.getElementById('error').innerHtml = err.toString() })
+  })
+}
+
 document.getElementById('load').addEventListener('click', () => {
   const tickFile = document.getElementById('tickFile').value
   // use dynamic imports to get the livecoded music file
