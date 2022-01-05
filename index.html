@@ -18,21 +18,20 @@
 <body>
 
   <h2>Thrum</h2>
-  Midi Clock Source <select id=select_midi_in></select>
-  Midi Notes Out <select id=select_midi_out></select>
+  Midi Clock Source <select id="select_midi_in"></select>
+  Midi Notes Out <select id="select_midi_out"></select>
 
   <h3>Thrum Tick js file</h3>
   <input id="tickFile" type="text" value="https://lilac-wooden-croissant.glitch.me/music.js">
   <button id="load" type="button" name="load">load</button>
+  
+  <div id="error">
+    
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/jzz"></script>
   <script src="https://cdn.jsdelivr.net/npm/jzz-gui-select"></script>
   <script src="https://cdn.jsdelivr.net/npm/immutable@4.0.0/dist/immutable.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ramda@0.25.0/dist/ramda.min.js"></script>
-  <script src="https://pagecdn.io/lib/ace/1.4.12/ace.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://pagecdn.io/lib/ace/1.4.12/theme-monokai.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://pagecdn.io/lib/ace/1.4.12/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://pagecdn.io/lib/ace/1.4.12/worker-javascript.js" type="text/javascript" charset="utf-8"></script>
   <script type="module" src="index.js"></script>
 </body>
 </html>

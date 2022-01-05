@@ -3,20 +3,26 @@ import { lengths } from './modules/lengths.js'
 let tick = () => {}
 let lastModified = null
 
+const midi_in = JZZ.gui.SelectMidiIn({ at: 'select_midi_in' })
+const midi_out = JZZ.gui.SelectMidiOut({ at: 'select_midi_out' })
+
+console.log('search', window.location.search)
+
 if (!window.location.search) {
+  console.log('no search')
   // user needs to set an entry point
   document.getElementById('load').addEventListener('click', () => {
     const tickFile = document.getElementById('tickFile').value
+    console.log('tick', tickFile)
     // just check that its valid before sending them off
     import(tickFile)
-      .then(module => {})
-      .catch(err => { document.getElementById('error').innerHtml = err.toString() })
+      .then(module => {
+        window.location = `${window.location.origin}?${encodeURIComponent(tickFile)}` 
+      })
+      .catch(err => document.getElementById('error').innerHTML = err.toString() )
   })
-}
-
-document.getElementById('load').addEventListener('click', () => {
-  const tickFile = document.getElementById('tickFile').value
-  // use dynamic imports to get the livecoded music file
+} else {
+  const tickFile = decodeURIComponent(window.location.search.substring(1))
   import(tickFile).then(module => tick = module.tick)
   // start hot reload
   setInterval(() => {
@@ -27,11 +33,8 @@ document.getElementById('load').addEventListener('click', () => {
       }
       lastModified = modified
     })
-  }, 1200)
-})
-
-const midi_in = JZZ.gui.SelectMidiIn({ at: 'select_midi_in' })
-const midi_out = JZZ.gui.SelectMidiOut({ at: 'select_midi_out' })
+  }, 1200)  
+}
 
 let initialState = SongState.set({spp: 0, userState: {}, actions: []})
 let lastState = initialState
