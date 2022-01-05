@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,46 +32,50 @@
   <link href="cover.css" rel="stylesheet">
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">  
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0">Cover</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Cover</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
   
-  <main class="px-3">  
-    <h1>Thrum</h1>
-    <p class="lead">A javascript livecoding music environment</p>
-    
-    <div class="input-field col s12">
-      <label>Midi Clock Source</label>
-      <select id="select_midi_in" class="form-select"></select>
-    </div>        
-    <div class="input-field col s12">
-      <label>Midi Notes Out</label>
-      <select id="select_midi_out" class="form-select"></select>
-    </div>   
 
-    <label>Thrum Tick js file</label>
-    <input id="tickFile" type="text" class="form-control" value="https://lilac-wooden-croissant.glitch.me/music.js">
+    <main class="px-3">  
+      <h1>Thrum</h1>
+      <p class="lead">A javascript livecoding music environment</p>
 
-    <button id="load" type="button" name="load" class="btn btn-primary">Load</button>
-    <div id="error"></div>
-  </main>
+      <div class="input-field col s12">
+        <label>Midi Clock Source</label>
+        <select id="select_midi_in" class="form-select"></select>
+      </div>        
+      <div class="input-field col s12">
+        <label>Midi Notes Out</label>
+        <select id="select_midi_out" class="form-select"></select>
+      </div>   
 
-  <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-  </footer>
-  
+      <label>Thrum Tick js file</label>
+      <input id="tickFile" type="text" class="form-control" value="https://lilac-wooden-croissant.glitch.me/music.js">
+
+      <button id="load" type="button" name="load" class="btn btn-primary">Load</button>
+      <div id="error"></div>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+      <p>Created with ❤️ by <a href="https://twitter.com/ryan_ramage_" class="text-white">@ryan_ramage_</a>.</p>
+    </footer>
+
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/jzz"></script>
   <script src="https://cdn.jsdelivr.net/npm/jzz-gui-select"></script>
   <script src="https://cdn.jsdelivr.net/npm/immutable@4.0.0/dist/immutable.min.js"></script>
   <script type="module" src="index.js"></script>
+
 </body>
 </html>
 
