@@ -13,15 +13,13 @@ if (midiOutName) midi_out.select(midiOutName)
 
 
 if (!window.location.search) {
-  console.log('no search')
   // user needs to set an entry point
   document.getElementById('load').addEventListener('click', () => {
     const tickFile = document.getElementById('tickFile').value
-    console.log('tick', tickFile)
     // just check that its valid before sending them off
     import(tickFile)
       .then(module => {
-        window.location = `${window.location.origin}?${encodeURIComponent(tickFile)}` 
+        window.location = `${window.location.origin}?${encodeURIComponent(tickFile)}`
       })
       .catch(err => document.getElementById('error').innerHTML = err.toString() )
   })
