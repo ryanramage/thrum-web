@@ -6,7 +6,11 @@ let lastModified = null
 const midi_in = JZZ.gui.SelectMidiIn({ at: 'select_midi_in' })
 const midi_out = JZZ.gui.SelectMidiOut({ at: 'select_midi_out' })
 
-console.log('search', window.location.search)
+let midiInName = localStorage.getItem('midi_in')
+if (midiInName) midi_in.select(midiInName)
+let midiOutName = localStorage.getItem('midi_out')
+if (midiOutName) midi_out.select(midiOutName)
+
 
 if (!window.location.search) {
   console.log('no search')
@@ -112,7 +116,8 @@ function toCC (spp, msg, context) {
 }
 
 let spp = 0
-midi_in.onSelect = () => {
+midi_in.onSelect = (name) => {
+  localStorage.setItem('midi_in', name)
   midi_in.connect(msg => {
     switch (msg[0]) {
       // Clock
@@ -142,5 +147,6 @@ midi_in.onSelect = () => {
   })
 }
 midi_out.onSelect = function(name) {
+  localStorage.setItem('midi_out', name)
   console.log('MIDI-out selected:', name);
 };
